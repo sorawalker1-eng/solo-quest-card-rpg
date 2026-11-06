@@ -1,14 +1,16 @@
-# Welcome to your Lovable project
+# Solo Quest: Card RPG
+
+Esse é o conceito do meu jogo, eu preciso criar todo o design e layout dele, usando como base as informações nesse MD, a ideia é ele ser um jogo de browser roguelike com cartas inspirada nos RPGs Old School, como se vc jogasse um rpg só vc, com ficha e dados, mapa desenhado e por ai vai, monstros com design dos antigos ad&d
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/c358bb45-d89b-4b38-b58c-68b22c6d1a9f).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +22,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
