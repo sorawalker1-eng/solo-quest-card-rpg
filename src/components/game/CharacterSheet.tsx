@@ -2,25 +2,25 @@ import { ATTRS, fmtMod, mod, type AttrKey } from "@/game/data";
 import { cn } from "@/lib/utils";
 
 export type SheetData = {
-  name?: string;
-  race?: string;
-  cls?: string;
-  background?: string;
-  motivation?: string;
-  level?: number;
-  xp?: number;
-  attrs?: Partial<Record<AttrKey, number>>;
-  hp?: number;
-  hpMax?: number;
-  ac?: number;
-  attack?: number;
-  weapon?: string;
-  armor?: string;
-  virtues?: string[];
-  flaws?: string[];
-  items?: string[];
-  saves?: [number, number, number];
-  highlight?: AttrKey;
+  name?: string | undefined;
+  race?: string | undefined;
+  cls?: string | undefined;
+  background?: string | undefined;
+  motivation?: string | undefined;
+  level?: number | undefined;
+  xp?: number | undefined;
+  attrs?: Partial<Record<AttrKey, number>> | undefined;
+  hp?: number | undefined;
+  hpMax?: number | undefined;
+  ac?: number | undefined;
+  attack?: number | undefined;
+  weapon?: string | undefined;
+  armor?: string | undefined;
+  virtues?: string[] | undefined;
+  flaws?: string[] | undefined;
+  items?: string[] | undefined;
+  saves?: [number, number, number] | undefined;
+  highlight?: AttrKey | undefined;
 };
 
 function Field({ label, value, className }: { label: string; value?: React.ReactNode; className?: string }) {

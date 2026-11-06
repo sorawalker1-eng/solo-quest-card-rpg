@@ -10,10 +10,10 @@ export function Choice({
   tone = "bone",
 }: {
   children: ReactNode;
-  check?: string;
-  onClick?: () => void;
-  disabled?: boolean;
-  tone?: "bone" | "violet" | "blood";
+  check?: string | undefined;
+  onClick?: (() => void) | undefined;
+  disabled?: boolean | undefined;
+  tone?: "bone" | "violet" | "blood" | undefined;
 }) {
   const diamond =
     tone === "violet" ? "border-violet bg-violet/20" : tone === "blood" ? "border-blood bg-blood/20" : "border-ember/70 bg-transparent";

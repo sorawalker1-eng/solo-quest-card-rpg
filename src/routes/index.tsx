@@ -88,10 +88,10 @@ function Title() {
             </div>
           </div>
           <div className="absolute right-4 top-48 rotate-[8deg]">
-            <GameCard card={DECK[0]} />
+            <GameCard card={DECK[0]!} />
           </div>
           <div className="absolute right-36 top-64 -rotate-[4deg]">
-            <GameCard card={DECK[5]} />
+            <GameCard card={DECK[5]!} />
           </div>
           <D20 value={20} size={86} tone="ember" className="absolute bottom-10 left-44 rotate-12" />
           <D20 value={7} size={60} tone="bone" className="absolute bottom-4 left-72 -rotate-12 opacity-80" />

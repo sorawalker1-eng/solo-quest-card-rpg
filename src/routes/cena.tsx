@@ -80,7 +80,7 @@ function Scene() {
   const [nodeId, setNodeId] = useState("start");
   const [log, setLog] = useState<LogEntry[]>([]);
   const [lastRoll, setLastRoll] = useState<{ d: number; total: number; dc: number; ok: boolean; key: number } | null>(null);
-  const node = NODES[nodeId];
+  const node = NODES[nodeId] ?? NODES.start!;
   const monster = MONSTERS.find((m) => m.id === "enforcado")!;
 
   const choose = (o: Opt) => {

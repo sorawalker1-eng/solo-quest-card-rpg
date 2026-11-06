@@ -10,7 +10,7 @@ const toneMap = {
 };
 
 /** Selo de cera com a intenção do inimigo. */
-export function IntentSeal({ intent, value }: { intent: Intent; value?: string }) {
+export function IntentSeal({ intent, value }: { intent: Intent; value?: string | undefined }) {
   const meta = INTENT_LABEL[intent];
   return (
     <div className="flex items-center gap-3 animate-rise">

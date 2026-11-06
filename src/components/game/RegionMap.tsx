@@ -49,12 +49,12 @@ export function RegionMap({
 }: {
   current: string;
   visited: string[];
-  selected?: string;
+  selected?: string | undefined;
   sight?: number;
-  onSelect?: (n: MapNode) => void;
+  onSelect?: ((n: MapNode) => void) | undefined;
 }) {
   const byId = Object.fromEntries(REGION_NODES.map((n) => [n.id, n]));
-  const cur = byId[current];
+  const cur = byId[current]!;
   const reachable = new Set(cur.links);
   const fogFrom = cur.col + sight + 1;
   const visitedEdges = new Set<string>();
@@ -81,10 +81,10 @@ export function RegionMap({
 
       {/* decoração cartográfica */}
       <g filter="url(#rough)" stroke="currentColor" fill="none" strokeOpacity="0.35" strokeWidth="1.1">
-        {[[160, 470], [210, 488], [480, 70], [520, 60], [700, 480], [380, 490]].map(([x, y], i) => (
+        {([[160, 470], [210, 488], [480, 70], [520, 60], [700, 480], [380, 490]] as [number, number][]).map(([x, y], i) => (
           <path key={`h${i}`} d={`M${x - 14} ${y} L${x} ${y - 14} L${x + 14} ${y}`} />
         ))}
-        {[[120, 90], [140, 104], [300, 470], [620, 90], [640, 104], [880, 450]].map(([x, y], i) => (
+        {([[120, 90], [140, 104], [300, 470], [620, 90], [640, 104], [880, 450]] as [number, number][]).map(([x, y], i) => (
           <g key={`t${i}`}>
             <path d={`M${x} ${y} L${x} ${y - 16} M${x - 6} ${y - 6} L${x} ${y - 16} L${x + 6} ${y - 6}`} />
           </g>
@@ -97,7 +97,7 @@ export function RegionMap({
       {/* caminhos */}
       {REGION_NODES.flatMap((n) =>
         n.links.map((l) => {
-          const t = byId[l];
+          const t = byId[l]!;
           const key = `${n.id}-${l}`;
           const walked = visitedEdges.has(key);
           const next = n.id === current && reachable.has(l);

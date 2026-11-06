@@ -11,7 +11,7 @@ import { DECK, MONSTERS, SAMPLE_HERO, fmtMod, mod, roll, type Card } from "@/gam
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/combate")({
-  validateSearch: (s: Record<string, unknown>) => ({ m: typeof s.m === "string" ? s.m : undefined }),
+  validateSearch: (s: Record<string, unknown>) => ({ m: typeof s["m"] === "string" ? s["m"] : undefined }),
   head: () => ({
     meta: [
       { title: "Combate — Mesa Vazia" },
@@ -39,7 +39,7 @@ type Line = { who: "hero" | "foe" | "gm"; text: string };
 
 function Combat() {
   const { m } = Route.useSearch();
-  const foe = MONSTERS.find((x) => x.id === m) ?? MONSTERS[0];
+  const foe = MONSTERS.find((x) => x.id === m) ?? MONSTERS[0]!;
   const [foeHp, setFoeHp] = useState(foe.hp);
   const [hp, setHp] = useState(SAMPLE_HERO.hp);
   const [block, setBlock] = useState(0);
@@ -61,7 +61,7 @@ function Combat() {
     logRef.current?.scrollTo({ top: logRef.current.scrollHeight, behavior: "smooth" });
   }, [lines]);
 
-  const intent = foe.intents[turn % foe.intents.length];
+  const intent = foe.intents[turn % foe.intents.length]!;
   const say = (l: Line) => setLines((s) => [...s, l]);
   const over = foeHp <= 0 || hp <= 0;
 

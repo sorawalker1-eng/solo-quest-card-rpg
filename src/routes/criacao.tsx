@@ -46,12 +46,12 @@ function Option({
   sub,
   aside,
 }: {
-  active?: boolean;
-  disabled?: boolean;
+  active?: boolean | undefined;
+  disabled?: boolean | undefined;
   onClick: () => void;
   title: string;
-  sub?: string;
-  aside?: string;
+  sub?: string | undefined;
+  aside?: string | undefined;
 }) {
   return (
     <button
@@ -315,7 +315,7 @@ function Creation() {
                   placeholder="Escreva um nome…"
                   className="flex-1 border-b border-bone/30 bg-transparent px-1 py-2 font-narrative text-2xl italic text-bone placeholder:text-bone-dim/50 focus:border-ember focus:outline-none"
                 />
-                <Button variant="bone" onClick={() => setName(NAMES[Math.floor(Math.random() * NAMES.length)])}>
+                <Button variant="bone" onClick={() => setName(NAMES[Math.floor(Math.random() * NAMES.length)] ?? "Aldric")}>
                   Sortear
                 </Button>
               </div>
