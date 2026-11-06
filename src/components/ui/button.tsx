@@ -16,6 +16,11 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        ember:
+          "rounded-sm border border-ember/70 bg-ember/10 font-display text-base tracking-wide text-ember-glow hover:bg-ember/20 hover:shadow-[var(--shadow-ember)] transition-all",
+        bone: "rounded-sm border border-bone/25 bg-transparent font-display text-base tracking-wide text-bone hover:border-bone/60 hover:bg-bone/5",
+        ink: "rounded-sm border border-ink/50 bg-transparent font-display text-base text-ink hover:bg-ink/10",
+        inkSolid: "rounded-sm bg-ink font-display text-base text-paper hover:bg-ink/85",
       },
       size: {
         default: "h-9 px-4 py-2",
